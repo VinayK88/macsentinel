@@ -1,0 +1,43 @@
+"""MacSentinel: reproducible macOS security analytics for portfolio research."""
+
+from .core import (
+    FEATURE_COLUMNS,
+    SCENARIOS,
+    aggregate_sessions,
+    apply_concept_drift,
+    apply_mimicry_attack,
+    build_provenance_edges,
+    classification_metrics,
+    evaluate_scores,
+    fit_logistic,
+    generate_macos_events,
+    group_train_test_split,
+    gru_encode_sequences,
+    make_sequence_tensor,
+    population_stability_index,
+    predict_logistic,
+    precision_recall_curve,
+    robust_anomaly_score,
+    temporal_graph_features,
+)
+
+__all__ = [
+    "FEATURE_COLUMNS",
+    "SCENARIOS",
+    "aggregate_sessions",
+    "apply_concept_drift",
+    "apply_mimicry_attack",
+    "build_provenance_edges",
+    "classification_metrics",
+    "evaluate_scores",
+    "fit_logistic",
+    "generate_macos_events",
+    "group_train_test_split",
+    "gru_encode_sequences",
+    "make_sequence_tensor",
+    "population_stability_index",
+    "predict_logistic",
+    "precision_recall_curve",
+    "robust_anomaly_score",
+    "temporal_graph_features",
+]

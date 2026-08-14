@@ -1,0 +1,16 @@
+{
+  "elapsedMilliseconds" : 952.842041,
+  "eventsDropped" : 0,
+  "eventsEmitted" : 2520,
+  "eventsPerSecond" : 2644.719577397404,
+  "eventsRead" : 2520,
+  "p50NormalizationMicros" : 243.834,
+  "p95NormalizationMicros" : 479.334,
+  "peakResidentMemoryMB" : 11.40625,
+  "privacyChecksPassed" : true,
+  "queueCapacity" : 256,
+  "queueHighWatermark" : 64,
+  "rawIdentifiersObservedInOutput" : 0,
+  "rawTargetsObservedInOutput" : 0,
+  "source" : "csv-replay:synthetic_macos_events.csv"
+}
