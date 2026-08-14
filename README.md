@@ -9,6 +9,7 @@
 [![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-analyst%20app-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![Data](https://img.shields.io/badge/Data-synthetic%20%26%20offline-7B61FF)](#safety-and-platform-boundary)
+[![Tests](https://github.com/VinayK88/macsentinel/actions/workflows/ci.yml/badge.svg)](https://github.com/VinayK88/macsentinel/actions/workflows/ci.yml)
 
 **Native telemetry · Privacy filtering · Temporal sequences · Provenance graphs · Drift · Adversarial robustness**
 
