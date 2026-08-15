@@ -23,6 +23,16 @@ MacSentinel is a portfolio-grade macOS security analytics lab. It converts synth
 
 ![MacSentinel dashboard preview](assets/macsentinel-dashboard.png)
 
+## 60-second reviewer path
+
+Short on time? Review the project in this order:
+
+1. [Understand the macOS security problem](#why-this-project).
+2. [Follow the privacy-preserving architecture](#architecture).
+3. [See the analyst-facing application](#analyst-app).
+4. [Open the executed security and ML notebooks](#notebook-lab).
+5. [Reproduce the demo locally](#quick-start).
+
 ## Why this project
 
 The design reflects themes visible in Apple's public security ecosystem:
