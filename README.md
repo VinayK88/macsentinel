@@ -103,8 +103,8 @@ The notebooks contain **41 executed code cells and 13 embedded visualizations**.
 ## Quick start
 
 ```bash
-git clone https://github.com/VinayK88/cybersecurity-analytics.git
-cd cybersecurity-analytics
+git clone https://github.com/VinayK88/macsentinel.git
+cd macsentinel
 
 python -m venv .venv
 source .venv/bin/activate
