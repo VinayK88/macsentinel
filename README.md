@@ -113,9 +113,10 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-For the notebooks:
+For interactive notebook browsing:
 
 ```bash
+python -m pip install jupyterlab
 jupyter lab notebooks
 ```
 
@@ -180,8 +181,9 @@ Before using real telemetry:
 macsentinel/
 ├── sensor-swift/                # Swift ingestion, privacy, buffering, benchmarks
 ├── app.py                       # Streamlit analyst workbench
-├── core.py                      # telemetry, features, models, stress tests
-├── visuals.py                   # dependency-light PNG chart renderer
+├── macsentinel/
+│   ├── core.py                  # telemetry, features, models, stress tests
+│   └── visuals.py               # dependency-light PNG chart renderer
 ├── data/
 │   └── synthetic_macos_events.csv
 ├── notebooks/                   # six executed notebooks
