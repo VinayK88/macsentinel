@@ -123,12 +123,26 @@ if filtered_sessions.empty:
     st.warning("No sessions match the selected host and scenario filters."); st.stop()
 filtered_sessions["alert"] = filtered_sessions.ml_score.ge(threshold)
 
-metric_columns = st.columns(5)
-metric_columns[0].metric("Sessions", f"{len(filtered_sessions):,}")
-metric_columns[1].metric("Events", f"{len(filtered_events):,}")
-metric_columns[2].metric("Alerts", f"{int(filtered_sessions.alert.sum()):,}", f"{filtered_sessions.alert.mean():.1%} queue rate")
-metric_columns[3].metric("Benchmark attacks", f"{int(filtered_sessions.label.sum()):,}")
-metric_columns[4].metric("Holdout F1", f"{holdout_metrics['f1']:.2f}", "unseen hosts")
+alerts = int(filtered_sessions.alert.sum())
+attacks = int(filtered_sessions.label.sum())
+queue_rate = float(filtered_sessions.alert.mean())
+mean_score = float(filtered_sessions.ml_score.mean())
+max_score = float(filtered_sessions.ml_score.max())
+mean_rule = float(filtered_sessions.rule_risk.mean())
+sensitive_events = int(filtered_events["sensitive_access"].sum())
+beacon_events = int(filtered_events["network_beacon"].sum())
+xprotect_events = int(filtered_events["xprotect_detection"].sum())
+priv_esc_events = int(filtered_events["privilege_escalation"].sum())
+
+kpi_rows = [
+    [("Sessions",f"{len(filtered_sessions):,}"),("Events",f"{len(filtered_events):,}"),("Alerts",f"{alerts:,}"),("Benchmark attacks",f"{attacks:,}"),("Holdout F1",f"{holdout_metrics['f1']:.2f}")],
+    [("Queue rate",f"{queue_rate:.1%}"),("Mean ML score",f"{mean_score:.3f}"),("Max ML score",f"{max_score:.3f}"),("Mean rule risk",f"{mean_rule:.1f}"),("Alert threshold",f"{threshold:.2f}")],
+    [("Hosts",len(hosts)),("Scenarios",len(scenarios)),("Sensitive access",sensitive_events),("Network beacons",beacon_events),("Privilege escalation",priv_esc_events)],
+    [("XProtect detections",xprotect_events),("Train sessions",len(train_index)),("Test sessions",len(test_index)),("Features",len(FEATURE_COLUMNS)),("Production actions",0)],
+]
+for row in kpi_rows:
+    cols=st.columns(5)
+    for col,(label,value) in zip(cols,row): col.metric(label,value)
 
 overview_tab, investigation_tab, lab_tab, methods_tab = st.tabs(["Overview", "Investigation", "Detection lab", "Methodology"])
 
